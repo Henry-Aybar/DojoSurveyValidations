@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Dojo Survey";
+}
+
+@model Dojo
+
+<div class="w-50 mx-auto">
+    <h1>Tell me you fav icecream!!</h1>
+
+    <form method="post"  asp-action="DisplayData" asp-controller="Home">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name">
+            <span asp-validation-for="Name" class="alert-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DojoLocation"></label>
+            <select class="form-control" asp-for="DojoLocation">
+                <option value="Chicago">Chicago</option>
+                <option value="Online">Online</option>
+                <option value="Other">Other</option>
+            </select>
+            <span asp-validation-for="DojoLocation" class="alert-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FavLang"></label>
+            <select class="form-control" asp-for="FavLang">
+                <option value="C#">C#</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+            </select>
+            <span asp-validation-for="FavLang" class="alert-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Comment"></label>
+            <textarea class="form-text" cols="70" rows="3" asp-for="Comment"></textarea>
+            <span asp-validation-for="Comment" class="alert-danger"></span>
+        </div>
+
+
+        <input type="submit" class="btn btn-lg btn-primary">
+    </form>
+</div>
